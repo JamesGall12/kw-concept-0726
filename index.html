@@ -36,9 +36,13 @@ a{color:inherit;text-decoration:none}
 .btn-ghost{background:transparent;color:var(--pine);border:1.5px solid var(--pine)}
 .btn-bronze{background:var(--bronze);color:#fff}
 /* pricing cards */
-.price-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:22px;margin-top:38px;align-items:start}
-.price-card{background:var(--bone);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 16px rgba(14,36,29,.05)}
-.price-card.featured{box-shadow:var(--shadow);border-color:var(--bronze-soft)}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px;align-items:stretch}
+.price-card{background:var(--bone);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 16px rgba(14,36,29,.05);display:flex;flex-direction:column}
+.price-card-body{display:flex;flex-direction:column;flex:1}
+.price-list{flex:1}
+.card-form{display:none;margin-top:14px}
+.card-form.open{display:block}
+.cta-slot{margin-top:auto}
 .price-card-head{background:var(--pine);color:#fff;text-align:center;font-family:'Fraunces',serif;font-size:1.15rem;padding:15px}
 .price-card-body{padding:26px 24px}
 .price-big{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--pine);text-align:center;line-height:1}
@@ -272,7 +276,7 @@ footer p{max-width:30rem;margin-top:10px}
     <p class="lede">Know exactly what you'll pay before you start. Book directly below. No waiting, no callbacks needed.</p>
     <div class="price-grid">
 
-      <div class="price-card featured">
+      <div class="price-card">
         <div class="price-card-head">Initial Assessment</div>
         <div class="price-card-body">
           <div class="price-big"><span class="price-now">NOW</span>£49</div>
@@ -284,18 +288,21 @@ footer p{max-width:30rem;margin-top:10px}
             <li>Includes your first review appointment</li>
             <li>No commitment beyond this one appointment</li>
           </ul>
-          <div class="card-form">
-            <div class="form-row">
-              <input type="text" placeholder="First name" aria-label="First name">
-              <input type="text" placeholder="Last name" aria-label="Last name">
+          <div class="cta-slot">
+            <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="toggleForm(this)">Book my assessment</button>
+            <div class="card-form">
+              <div class="form-row">
+                <input type="text" placeholder="First name" aria-label="First name">
+                <input type="text" placeholder="Last name" aria-label="Last name">
+              </div>
+              <div class="form-row">
+                <input type="email" placeholder="Email" aria-label="Email">
+                <input type="tel" placeholder="Phone" aria-label="Phone">
+              </div>
+              <label class="consent"><input type="checkbox"> I'm 18+ and happy for Keltoi to contact me</label>
+              <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="cardBook(this)">Confirm booking</button>
+              <div class="card-success">✓ Booked. The team will confirm your slot shortly.</div>
             </div>
-            <div class="form-row">
-              <input type="email" placeholder="Email" aria-label="Email">
-              <input type="tel" placeholder="Phone" aria-label="Phone">
-            </div>
-            <label class="consent"><input type="checkbox"> I'm 18+ and happy for Keltoi to contact me</label>
-            <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="cardBook(this)">Book my assessment</button>
-            <div class="card-success">✓ Booked. The team will confirm your slot shortly.</div>
           </div>
         </div>
       </div>
@@ -311,7 +318,7 @@ footer p{max-width:30rem;margin-top:10px}
             <li>Medication delivered discreetly where prescribed</li>
             <li>No contracts. Pause or cancel anytime</li>
           </ul>
-          <a class="btn btn-ghost" style="width:100%;justify-content:center" href="#quiz">Check if I qualify</a>
+          <div class="cta-slot"><a class="btn btn-primary" style="width:100%;justify-content:center" href="#quiz">Check if I qualify</a></div>
         </div>
       </div>
 
@@ -325,7 +332,7 @@ footer p{max-width:30rem;margin-top:10px}
             <li>No obligation, no payment details</li>
             <li>Instant answer on whether this could suit you</li>
           </ul>
-          <a class="btn btn-bronze" style="width:100%;justify-content:center" href="#quiz">Start the free check</a>
+          <div class="cta-slot"><a class="btn btn-primary" style="width:100%;justify-content:center" href="#quiz">Start the free check</a></div>
         </div>
       </div>
 
@@ -453,6 +460,10 @@ function finish(){
 function cardBook(btn){
   btn.style.display='none';
   btn.nextElementSibling.style.display='block';
+}
+function toggleForm(btn){
+  btn.style.display='none';
+  btn.nextElementSibling.classList.add('open');
 }
 render();
 </script>
