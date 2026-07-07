@@ -43,7 +43,8 @@ a{color:inherit;text-decoration:none}
 .card-form{display:none;margin-top:14px}
 .card-form.open{display:block}
 .cta-slot{margin-top:auto}
-.price-card-head{background:var(--pine);color:#fff;text-align:center;font-family:'Fraunces',serif;font-size:1.15rem;padding:15px}
+.price-card-head{background:var(--pine);color:#fff;text-align:center;font-family:'Fraunces',serif;font-size:1.15rem;padding:15px;position:relative}
+.pop-badge{display:block;font-family:'Figtree',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.14em;color:var(--bronze-soft);margin-bottom:3px}
 .price-card-body{padding:26px 24px}
 .price-big{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--pine);text-align:center;line-height:1}
 .price-big small{font-size:1.1rem;color:var(--grey)}
@@ -206,8 +207,8 @@ footer p{max-width:30rem;margin-top:10px}
         <span>No contracts, cancel anytime</span>
       </div>
       <div class="price-anchor">
-        <strong>From £129/mo</strong>
-        <small>everything included · no hidden fees · illustrative pricing</small>
+        <strong>From £69</strong>
+        <small>single consultation · Complete Care £259 per month · no hidden fees</small>
       </div>
       <p class="reg-note">Suitability is assessed by a qualified clinician. Medication is prescribed only where clinically appropriate.</p>
     </div>
@@ -277,19 +278,19 @@ footer p{max-width:30rem;margin-top:10px}
     <div class="price-grid">
 
       <div class="price-card">
-        <div class="price-card-head">Initial Assessment</div>
+        <div class="price-card-head">Weight Loss Consultation</div>
         <div class="price-card-body">
-          <div class="price-big"><span class="price-now">NOW</span>£49</div>
-          <div class="price-tag">New patients</div>
+          <div class="price-big">£69</div>
+          <div class="price-tag">Single payment</div>
           <ul class="price-list">
-            <li>Full assessment with a GMC registered clinician</li>
-            <li>By phone or video, from home</li>
-            <li>Personalised plan, medication where appropriate</li>
-            <li>Includes your first review appointment</li>
-            <li>No commitment beyond this one appointment</li>
+            <li>Appointment with a UK doctor</li>
+            <li>Personalised treatment plan</li>
+            <li>Prescription provided if appropriate</li>
+            <li>Advice on treatment options and dosing</li>
+            <li>Pay as you go, medication paid separately</li>
           </ul>
           <div class="cta-slot">
-            <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="toggleForm(this)">Book my assessment</button>
+            <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="toggleForm(this)">Book my consultation</button>
             <div class="card-form">
               <div class="form-row">
                 <input type="text" placeholder="First name" aria-label="First name">
@@ -308,36 +309,69 @@ footer p{max-width:30rem;margin-top:10px}
       </div>
 
       <div class="price-card">
-        <div class="price-card-head">Monthly Programme</div>
+        <div class="price-card-head"><span class="pop-badge">★ MOST POPULAR</span>Complete Care Programme</div>
         <div class="price-card-body">
-          <div class="price-big">£129<small>/mo</small></div>
-          <div class="price-tag">Existing patients</div>
+          <div class="price-big">£259<small>/mo</small></div>
+          <div class="price-tag">Medication included</div>
           <ul class="price-list">
-            <li>Clinician support whenever you need it</li>
-            <li>Dose reviews and plan adjustments</li>
-            <li>Medication delivered discreetly where prescribed</li>
-            <li>No contracts. Pause or cancel anytime</li>
+            <li>One month's medication included every month</li>
+            <li>Weekly support from real people on the clinical team</li>
+            <li>Monthly review with a UK doctor</li>
+            <li>Side effect help and dose adjustments</li>
+            <li>Discreet delivery and out of hours support included</li>
           </ul>
-          <div class="cta-slot"><a class="btn btn-primary" style="width:100%;justify-content:center" href="#quiz">Check if I qualify</a></div>
+          <div class="cta-slot">
+            <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="toggleForm(this)">Start Complete Care</button>
+            <div class="card-form">
+              <div class="form-row">
+                <input type="text" placeholder="First name" aria-label="First name">
+                <input type="text" placeholder="Last name" aria-label="Last name">
+              </div>
+              <div class="form-row">
+                <input type="email" placeholder="Email" aria-label="Email">
+                <input type="tel" placeholder="Phone" aria-label="Phone">
+              </div>
+              <label class="consent"><input type="checkbox"> I'm 18+ and happy for Keltoi to contact me</label>
+              <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="cardBook(this)">Confirm booking</button>
+              <div class="card-success">✓ Booked. The team will confirm your slot shortly.</div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="price-card">
-        <div class="price-card-head">Eligibility Check</div>
+        <div class="price-card-head">Consultation + First Month</div>
         <div class="price-card-body">
-          <div class="price-big">FREE</div>
-          <div class="price-tag">Not sure yet?</div>
+          <div class="price-big">£199</div>
+          <div class="price-tag">Single payment</div>
           <ul class="price-list">
-            <li>Three questions, under two minutes</li>
-            <li>No obligation, no payment details</li>
-            <li>Instant answer on whether this could suit you</li>
+            <li>Doctor appointment plus your first month's medication</li>
+            <li>Prescription provided if appropriate</li>
+            <li>Personalised treatment plan</li>
+            <li>Discreet home delivery included</li>
+            <li>No ongoing commitment</li>
           </ul>
-          <div class="cta-slot"><a class="btn btn-primary" style="width:100%;justify-content:center" href="#quiz">Start the free check</a></div>
+          <div class="cta-slot">
+            <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="toggleForm(this)">Start my journey</button>
+            <div class="card-form">
+              <div class="form-row">
+                <input type="text" placeholder="First name" aria-label="First name">
+                <input type="text" placeholder="Last name" aria-label="Last name">
+              </div>
+              <div class="form-row">
+                <input type="email" placeholder="Email" aria-label="Email">
+                <input type="tel" placeholder="Phone" aria-label="Phone">
+              </div>
+              <label class="consent"><input type="checkbox"> I'm 18+ and happy for Keltoi to contact me</label>
+              <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="cardBook(this)">Confirm booking</button>
+              <div class="card-success">✓ Booked. The team will confirm your slot shortly.</div>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
-    <p class="out-note">Illustrative pricing for concept purposes. Final pricing to be confirmed.</p>
+    <p class="out-note">Clinical assessment fees cover clinician time and do not guarantee a prescription. Medication charges may only be refundable before prescription, dispensing or dispatch.</p>
   </div>
 </section>
 
@@ -386,7 +420,7 @@ footer p{max-width:30rem;margin-top:10px}
     <h2>Asked all the time</h2>
     <div class="faq" style="text-align:left">
       <details><summary>Is this safe?</summary><p>Every patient is assessed by a UK registered doctor before any treatment is considered, and monitored weekly throughout. Medication is only prescribed where clinically appropriate.</p></details>
-      <details><summary>How much does it cost?</summary><p>Plans start from £129 a month with everything included: consultations, clinician support and dose reviews. No hidden fees, no contracts, cancel anytime. (Illustrative pricing for this concept.)</p></details>
+      <details><summary>How much does it cost?</summary><p>A single consultation is £69. The Complete Care Programme is £259 a month with medication, delivery, weekly support and doctor reviews all included. No hidden fees, no contracts, cancel anytime.</p></details>
       <details><summary>What if medication isn't right for me?</summary><p>Then we'll tell you honestly. The doctor builds a plan around what's clinically right for you. Medication is one tool, not the whole answer.</p></details>
       <details><summary>Am I locked into anything?</summary><p>No. There are no contracts and no minimum term. Start with one assessment, and if it's not for you, that's where it ends. If you join the programme you can pause or cancel anytime.</p></details>
       <details><summary>How quickly can I start?</summary><p>The check takes two minutes, a doctor typically reviews your case within one working day, and treatment can begin the same week where appropriate.</p></details>
